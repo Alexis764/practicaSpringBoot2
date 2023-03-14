@@ -1,0 +1,47 @@
+[
+    {
+    "idUsuario": 0,
+    "nombre": "Alexis",
+    "pais": "Colombia",
+    "fechaNacimiento": "2004-07-29",
+    "correo": "arevaloalexis764@gmail.com"
+    },
+    
+    {
+    "idUsuario": 1,
+    "nombre": "Juan",
+    "pais": "Argentina",
+    "fechaNacimiento": "2000-03-14",
+    "correo": "juan112@gmail.com",
+    "notas": [3.5, 5, 2.5, 2],
+    "hobbie": {
+        "nombreH": "Futbol",
+        "horas": "5",
+        "dias": ["Lunes", "Miercoles", "Viernes"]
+        }
+    },
+
+    {
+        "idUsuario": 2,
+        "nombre": "Pepe",
+        "pais": "Chile",
+        "fechaNacimiento": "1980-10-11",
+        "correo": "pepe345@gmail.com"
+    },
+
+    {
+        "idUsuario": 3,
+        "nombre": "Jesus",
+        "pais": "Venezuela",
+        "fechaNacimiento": "1990-09-24",
+        "correo": "jesus985@gmail.com"
+    },
+
+    {
+        "idUsuario": 4,
+        "nombre": "Oscar",
+        "pais": "Peru",
+        "fechaNacimiento": "2003-05-19",
+        "correo": "oscar856@gmail.com"
+    }
+]
