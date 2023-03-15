@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/styleform.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="" id="formulario">
+
+        <ul>
+            <div id="cajaID">
+                <label>Ingrese el numero de ID:</label>
+                <input id="numID" type="number" min="0" placeholder="Digite aqui" >
+            </div>
+
+            <div id="cajaNombre">
+                <label>Ingrese su nombre:</label>
+                <input id="nombre" type="text" pattern="[A-Za-z]" minlength="10" placeholder="Digite aqui" >
+            </div>
+
+            <div id="cajaPais">
+                <label>Ingrese el pais:</label>
+                <input id="pais" type="text" pattern="[A-Za-z]" placeholder="Digite aqui" >
+            </div>
+
+            
+            <div id="cajaFecha">
+                <label>Ingrese su fecha de nacimiento:</label>
+                <input id="fecha" type="date" name="nacimiento" id="nacimiento" >
+            </div>
+            
+            <div id="cajaCorreo">
+                <label>Ingrese su correo:</label>
+                <input id="correo" type="email" placeholder="example@gmail.com" >
+            </div>
+
+            <input type="submit" value="Enviar">
+            <button type="button" id="listar">Listar</button>
+
+        </ul>
+
+    </form>
+
+    <div>
+        <table id="tabla">
+            <thead>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Pais</th>
+                <th>Fecha</th>
+                <th>Correo</th>
+            </thead>
+        </table>
+    </div>
+
+    <script src="Js/enviarR.js"></script>
+</body>
+</html>

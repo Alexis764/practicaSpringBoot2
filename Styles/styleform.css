@@ -1,0 +1,32 @@
+body{
+    width: 100%;
+    margin: 0;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    border: 2px black solid;
+    justify-content: center;
+}
+
+input{
+    width: 100%;
+    margin: 10px;
+}
+
+div{
+    margin: 2%;
+    padding: 4%;
+}
+
+#tabla{
+    width: 100%;
+    border: 2px black solid;
+    padding: 3%;
+}
+th,td{
+    border: 1px black solid;
+    padding: 2px;
+    margin: 4%;
+}
