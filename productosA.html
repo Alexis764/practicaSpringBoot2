@@ -13,19 +13,38 @@
 <body>
     
     <form>
+        
+        <label>CODIGO DE PRODUCTO</label>
+        <input type="number" id="codigoProHtml">
 
-        <button type="button" id="listar">LISTAR</button>
+        <label for="">CANTIDAD</label>
+        <input type="number" id="cantidadProHtml">
+
+        <label>NOMBRE</label>
+        <input type="text" id="nombreProHtml">
+
+        <label for="">CATEGORIA</label>
+        <input type="text" id="categoriaProHtml">
+
+        <label for="">PRECIO</label>
+        <input type="number" id="precioProHtml">
+
+        <button type="button" id="enviarPro">ENVIAR</button>
+        <button type="button" id="listarPro">LISTAR</button>
+        <button type="button" id="calcularTotalPro">CALCULAR TOTAL</button>
 
     </form>
 
+
     <a href="indexA.html">Index</a>
 
+
     <div>
-        <table id="tabla">
+        <table id="tablaPro">
         </table>
     </div>
 
 
-    <script src="js/enviarA.js"></script>
+    <script src="js/enviarProA.js"></script>
 </body>
 </html>

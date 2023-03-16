@@ -15,7 +15,7 @@ public class ServicioProductosAlexis {
         lista.add(new ProductosAlexis(5, 56, "Frijol", "Grano", 15800.0, 0));
     }
 
-    public ArrayList<ProductosAlexis> mostrarLista() {
+    public ArrayList<ProductosAlexis> mostrarListaProductos() {
         return lista;
     }
 
@@ -23,11 +23,9 @@ public class ServicioProductosAlexis {
         return lista.size();
     }
 
-
-
     public ArrayList<ProductosAlexis> totalProducto() {
         for (ProductosAlexis producto: lista) {
-            producto.setTotal(producto.getCantidad() * producto.getPrecio());
+            producto.setTotalPro(producto.getCantidadPro() * producto.getPrecioPro());
         }
 
         return lista;
@@ -37,7 +35,7 @@ public class ServicioProductosAlexis {
         int totalFinal = 0;
 
         for (ProductosAlexis producto: lista) {
-           totalFinal += producto.getTotal();
+           totalFinal += producto.getTotalPro();
         }
 
         return totalFinal;
