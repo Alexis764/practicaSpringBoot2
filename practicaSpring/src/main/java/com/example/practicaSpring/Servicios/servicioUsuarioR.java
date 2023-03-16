@@ -19,4 +19,9 @@ public class servicioUsuarioR {
         return lista;
     }
 
+    public String agregarUsuario(UsuarioR usu){
+        lista.add((usu));
+        return "Registro Exitoso";
+    }
+
 }
