@@ -39,6 +39,29 @@ button:hover {
 
 
 
+#links {
+    display: flex;
+    justify-content: space-around;
+}
+
+#links a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#links a:hover {
+    color: aqua;
+    border: 2px solid aqua;
+    border-radius: 10px;
+    background-color: black;
+}
+
+
+
 div {
     display: flex;
     justify-content: center;
@@ -58,3 +81,5 @@ th, td{
 .titleTabla {
     background-color: aqua;
 }
+
+
