@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/styleform.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Clientes</title>
+</head>
+<body>
+    <form action="" id="clientes">
+
+        <ul>
+            <div id="cajaCedula">
+                <label>Ingrese la cedula:</label>
+                <input id="cedula" type="number" min="0" placeholder="Digite aqui" >
+            </div>
+
+            <div id="cajaNombre">
+                <label>Ingrese el nombre:</label>
+                <input id="nombre" type="text" pattern="[A-Za-z]" minlength="10" placeholder="Digite aqui" >
+            </div>
+
+            <div id="cajaApellido">
+                <label>Ingrese el apellido:</label>
+                <input id="apellido" type="text" pattern="[A-Za-z]" placeholder="Digite aqui" >
+            </div>
+
+            <div id="cajaNumero">
+                <label>Ingrese el numero de celular:</label>
+                <input id="numero" type="number" min="0" placeholder="Digite aqui" >
+            </div>
+            
+            <div id="cajaCorreo">
+                <label>Ingrese el correo:</label>
+                <input id="correo" type="email" placeholder="example@gmail.com" >
+            </div>
+
+            <input type="submit" value="Enviar">
+            <button type="button" id="listar">Listar</button>
+
+        </ul>
+
+    </form>
+
+    <div>
+        <table id="tabla">
+            <thead>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Numero</th>
+                <th>Correo</th>
+            </thead>
+        </table>
+    </div>
+
+    <script src="Js/enviarR.js"></script>
+</body>
+</html>
