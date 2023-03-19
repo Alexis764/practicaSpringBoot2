@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+    
     $('#listar').on('click', function() {
 
         let tabla = document.querySelector('#tabla')
@@ -30,6 +32,7 @@ $(document).ready(function(){
     });
 
 
+
     $('#enviar').on('click', function() {
 
         let datos = {
@@ -44,18 +47,19 @@ $(document).ready(function(){
         
         $.ajax({
         
-            url: "http://localhost:8080/agregarUsuarioA",
             type: "POST", 
+            url: "http://localhost:8080/agregarUsuarioA",
             data: datosEnvio,
             contentType: "application/JSON",
-            dataType: "JSON",
+            //dataType: "JSON",
             success: function(respuesta) {
-                
+                alert(respuesta)
             }
 
         });
 
     });
+
 
 
 });

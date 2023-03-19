@@ -19,16 +19,24 @@ public class ServicioProductosAlexis {
         return lista;
     }
 
-    public int cantidadProductos() {
-        return lista.size();
-    }
-
     public ArrayList<ProductosAlexis> totalProducto() {
         for (ProductosAlexis producto: lista) {
             producto.setTotalPro(producto.getCantidadPro() * producto.getPrecioPro());
         }
 
         return lista;
+    }
+
+    public String agregarProductoAlexis (ProductosAlexis producto) {
+        lista.add(producto);
+        return "Registro existoso";
+    }
+
+
+
+
+    public int cantidadProductos() {
+        return lista.size();
     }
 
     public double totalFinal() {
