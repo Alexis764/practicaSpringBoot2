@@ -54,9 +54,9 @@ $(document).ready(function() {
          data: datosEnvio,
          //Es decir que el contenido sera JSON
          contentType: "application/JSON",
-         dataType: "JSON",
+         //dataType: "JSON",
          success: function(respuesta){
-            console.log(respuesta);
+            alert(respuesta);
          }
 
       });
