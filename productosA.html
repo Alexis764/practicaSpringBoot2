@@ -24,7 +24,12 @@
         <input type="text" id="nombreProHtml">
 
         <label for="">CATEGORIA</label>
-        <input type="text" id="categoriaProHtml">
+        <select id="categoriaProHtml">
+            <option value="Frutas">Frutas</option>
+            <option value="Vegetales">Vegetales</option>
+            <option value="Aseo">Aseo</option>
+            <option value="Grano">Grano</option>
+        </select>
 
         <label for="">PRECIO</label>
         <input type="number" id="precioProHtml">
@@ -60,13 +65,18 @@
         
 
 
-        <label>ID DE USUARIO BUSCAR</label>
-        <input type="number" id="idUsuarioBuscar">
+        <label>CATEGORIA PARA BUSCAR</label>
+        <select id="categoriaProHtmlBuscar">
+            <option value="Frutas">Frutas</option>
+            <option value="Vegetales">Vegetales</option>
+            <option value="Aseo">Aseo</option>
+            <option value="Grano">Grano</option>
+        </select>
 
-        <button type="button" id="buscar">BUSCAR</button>
+        <button type="button" id="buscarCategoriaPro">BUSCAR</button>
 
         <div>
-            <table id="tablaBuscarCodigoPro">
+            <table id="tablaBuscarCategoriaPro">
             </table>
         </div>
 

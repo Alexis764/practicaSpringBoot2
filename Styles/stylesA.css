@@ -15,7 +15,7 @@ label {
     min-width: 400PX;
 }
 
-input {
+input, select {
     width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;

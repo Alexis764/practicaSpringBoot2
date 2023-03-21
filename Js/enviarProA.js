@@ -96,25 +96,55 @@ $(document).ready(function(){
 
 
 
-    $('#buscar').on('click', function() {
+    $('#buscarCodigoPro').on('click', function() {
         
-        let tabla = document.querySelector('#tablaBuscar')
-        tabla.innerHTML = '<thead><th class="titleTabla">Codigo<th class="titleTabla">Nombre<th class="titleTabla">Pais<th class="titleTabla">Fecha<th class="titleTabla">Correo'
+        let tabla = document.querySelector('#tablaBuscarCodigoPro')
+        tabla.innerHTML = '<thead><th class="titleTabla" colspan="6">PRODUCTOS<thead><th class="titleTabla">Codigo<th class="titleTabla">Cantidad<th class="titleTabla">Nombre<th class="titleTabla">Categoria<th class="titleTabla">Precio<th class="titleTabla">Total'
 
-        let codigo = $('#idUsuarioBuscar').val();
+        let codigoPro = $('#codigoProHtmlBuscar').val();
         $.ajax({
 
-            url: "http://localhost:8080/buscarUsuarioA/" + codigo,
+            url: "http://localhost:8080/buscarCodigoProA/" + codigoPro,
             type: "GET",
             dataType: "JSON",
             success: function(respuesta) {
 
-                if (respuesta != null) {
-                    tabla.innerHTML += '<tr><td>' + respuesta.idUsuario + 
-                    '<td>' + respuesta.nombre +
-                    '<td>' + respuesta.pais +
-                    '<td>' + respuesta.fechaNacimiento +
-                    '<td>' + respuesta.correo
+                tabla.innerHTML += '<tr><td>' + respuesta.codigoPro + 
+                    '<td>' + respuesta.cantidadPro +
+                    '<td>' + respuesta.nombrePro +
+                    '<td>' + respuesta.categoriaPro +
+                    '<td>' + respuesta.precioPro +
+                    '<td>' + respuesta.totalPro
+
+            }
+
+        });
+
+    });
+
+
+    
+    $('#buscarCategoriaPro').on('click', function() {
+        
+        let tabla = document.querySelector('#tablaBuscarCategoriaPro')
+        tabla.innerHTML = '<thead><th class="titleTabla" colspan="6">PRODUCTOS<thead><th class="titleTabla">Codigo<th class="titleTabla">Cantidad<th class="titleTabla">Nombre<th class="titleTabla">Categoria<th class="titleTabla">Precio<th class="titleTabla">Total'
+
+        let categoriaPro = $('#categoriaProHtmlBuscar').val();
+        $.ajax({
+
+            url: "http://localhost:8080/buscarCategoriaProA/" + categoriaPro,
+            type: "GET",
+            dataType: "JSON",
+            success: function(respuesta) {
+
+                for (i=0; i <= respuesta.length; i++) {
+
+                    tabla.innerHTML += '<tr><td>' + respuesta[i].codigoPro + 
+                    '<td>' + respuesta[i].cantidadPro +
+                    '<td>' + respuesta[i].nombrePro +
+                    '<td>' + respuesta[i].categoriaPro +
+                    '<td>' + respuesta[i].precioPro +
+                    '<td>' + respuesta[i].totalPro
 
                 }
 
@@ -125,5 +155,5 @@ $(document).ready(function(){
     });
 
 
-    
+
 });
