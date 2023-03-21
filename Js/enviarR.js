@@ -55,12 +55,33 @@ $(document).ready(function() {
          //Es decir que el contenido sera JSON
          contentType: "application/JSON",
          //dataType: "JSON",
-         success: function(respuesta){
+         success: function( ){
             alert(respuesta);
          }
 
       });
 
    });
+
+   //Buscar dato y mostrarlo
+   $('#btnbuscar').on('click',function(){
+
+      let codigo = $('#numCodigo').val();
+      $.ajax({
+         url: "http://localhost:8080/buscarUsuario/"+codigo,
+         type: "GET",
+         dataType: "JSON",
+         success: function(respuesta){
+            console.log(respuesta);
+
+            if(respuesta != null){
+               $('#busqueda').append("Usuario: </br>Nombre: "+ respuesta.nombre+
+               "</br>Pais: "+respuesta.pais + "</br>Correo: "+ respuesta.correo)
+            }else{
+               alert("El usuario no se encontro")
+            }
+         }
+      })
+   })
 
 });

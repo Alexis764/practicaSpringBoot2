@@ -1,6 +1,5 @@
 package com.example.practicaSpring.Servicios;
 
-import ch.qos.logback.core.net.server.Client;
 import com.example.practicaSpring.Entidades.Cliente;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ public class servicioCliente {
         clientes.add(new Cliente(154353,"Dereck","Lopez", 303124123,"dereck14@gmail.com"));
     }
 
-    public ArrayList<Cliente> listaclientes() {
+    public ArrayList<Cliente> listarclientes() {
         return clientes;
     }
 }

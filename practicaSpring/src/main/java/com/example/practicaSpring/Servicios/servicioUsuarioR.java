@@ -24,4 +24,16 @@ public class servicioUsuarioR {
         return "Registro Exitoso";
     }
 
+    public UsuarioR buscarUsuario(int codigo){
+
+        UsuarioR usu = null;
+
+        for (UsuarioR u: lista){
+            if(u.getId() == codigo){
+                usu = u;
+            }
+        }
+        return usu;
+    }
+
 }
