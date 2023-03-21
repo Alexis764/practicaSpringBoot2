@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+
     $('#listarPro').on('click', function() {
 
         let tabla = document.querySelector('#tablaPro')
@@ -31,6 +33,7 @@ $(document).ready(function(){
     });
 
 
+
     $('#calcularTotalPro').on('click', function() {
 
         let tabla = document.querySelector('#tablaPro')
@@ -60,5 +63,37 @@ $(document).ready(function(){
         });
 
     });
+
+
+
+    $('#enviarPro').on('click', function() {
+
+        let datos = {
+            codigoPro: parseInt($('#codigoProHtml').val()),
+            cantidadPro: parseInt($('#cantidadProHtml').val()),
+            nombrePro: $('#nombreProHtml').val(),
+            categoriaPro: $('#categoriaProHtml').val(),
+            precioPro: parseFloat($('#precioProHtml').val()),
+            totalPro: 0.0
+        }
+        
+        let datosEnvio =  JSON.stringify(datos);
+        
+        $.ajax({
+        
+            type: "POST", 
+            url: "http://localhost:8080/agregarProductoA",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            //dataType: "JSON",
+            success: function(respuesta) {
+                alert(respuesta)
+            }
+
+        });
+
+    });
+
+
 
 });

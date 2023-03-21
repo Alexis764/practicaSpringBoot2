@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+    
     $('#listar').on('click', function() {
 
         let tabla = document.querySelector('#tabla')
@@ -12,7 +14,6 @@ $(document).ready(function(){
             type: "GET",
             dataType: "JSON",
             success: function(respuesta) {
-                console.log(respuesta);
 
                 for (i=0; i <= respuesta.length; i++) {
 
@@ -29,5 +30,36 @@ $(document).ready(function(){
         });
 
     });
+
+
+
+    $('#enviar').on('click', function() {
+
+        let datos = {
+            idUsuario: parseInt($('#idUsuario').val()),
+            nombre: $('#nombre').val(),
+            pais: $('#pais').val(),
+            fechaNacimiento: $('#fechaNacimiento').val(),
+            correo: $('#correo').val()
+        }
+        
+        let datosEnvio =  JSON.stringify(datos);
+        
+        $.ajax({
+        
+            type: "POST", 
+            url: "http://localhost:8080/agregarUsuarioA",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            //dataType: "JSON",
+            success: function(respuesta) {
+                alert(respuesta)
+            }
+
+        });
+
+    });
+
+
 
 });

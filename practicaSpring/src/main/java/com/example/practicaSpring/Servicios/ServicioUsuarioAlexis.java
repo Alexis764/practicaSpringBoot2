@@ -18,4 +18,9 @@ public class ServicioUsuarioAlexis {
         return lista;
     }
 
+    public String agregarUsuarioAlexis(UsuarioAlexis usuario) {
+        lista.add(usuario);
+        return "Registro existoso";
+    }
+
 }

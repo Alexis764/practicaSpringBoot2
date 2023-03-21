@@ -5,9 +5,7 @@ import com.example.practicaSpring.Servicios.ServicioUsuarioAlexis;
 
 import java.util.ArrayList;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -19,6 +17,11 @@ public class ControladorUsuarioAlexis {
     @GetMapping("/listarUsuarioA")
     public ArrayList<UsuarioAlexis> listarUsuario() {
         return servicio.listar();
+    }
+
+    @PostMapping("/agregarUsuarioA")
+    public String agregarUsuario(@RequestBody UsuarioAlexis usuario) {
+        return servicio.agregarUsuarioAlexis(usuario);
     }
 
 }
