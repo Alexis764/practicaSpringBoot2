@@ -85,7 +85,7 @@ $(document).ready(function(){
             url: "http://localhost:8080/agregarProductoA",
             data: datosEnvio,
             contentType: "application/JSON",
-            //dataType: "JSON",
+            dataType: "TEXT",
             success: function(respuesta) {
                 alert(respuesta)
             }
@@ -155,5 +155,51 @@ $(document).ready(function(){
     });
 
 
+
+    $('#eliminarCodigoPro').on('click', function() {
+
+        let codigoPro = $('#codigoProHtmlEliminar').val();
+        $.ajax({
+
+            url: "http://localhost:8080/eliminarCodigoProA/" + codigoPro,
+            type: "GET",
+            dataType: "TEXT",
+            success: function(respuesta) {
+                alert(respuesta)
+            }
+
+        });
+
+    });
+
+
+
+    $('#actualizarPro').on('click', function() {
+
+        let datos = {
+            codigoPro: parseInt($('#codigoProHtmlActualizar').val()),
+            cantidadPro: parseInt($('#cantidadProHtmlActualizar').val()),
+            nombrePro: $('#nombreProHtmlActualizar').val(),
+            categoriaPro: $('#categoriaProHtmlActualizar').val(),
+            precioPro: parseFloat($('#precioProHtmlActualizar').val()),
+            totalPro: 0.0
+        }
+        
+        let datosEnvio =  JSON.stringify(datos);
+        
+        $.ajax({
+        
+            type: "POST", 
+            url: "http://localhost:8080/actualizarProductoA",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            dataType: "TEXT",
+            success: function(respuesta) {
+                alert(respuesta)
+            }
+
+        });
+
+    });
 
 });

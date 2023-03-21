@@ -38,6 +38,16 @@ public class ControladorProductosAlexis {
         return servicioProductos.buscarCategoriaProAlexis(categoriaPro);
     }
 
+    @GetMapping("/eliminarCodigoProA/{cod}")
+    public String eliminarCodigoPro(@PathVariable("cod") int codigoPro) {
+        return servicioProductos.eliminarCodigoProAlexis(codigoPro);
+    }
+
+    @PostMapping("/actualizarProductoA")
+    public String actualizarProducto(@RequestBody ProductosAlexis producto) {
+        return servicioProductos.actualizarProAlexis(producto);
+    }
+
 
 
 

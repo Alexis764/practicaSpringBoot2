@@ -35,7 +35,7 @@ public class ServicioProductosAlexis {
 
     public String agregarProductoAlexis (ProductosAlexis producto) {
         lista.add(producto);
-        return "Registro existoso";
+        return "PRODUCTO REGISTRADO";
     }
 
 
@@ -66,6 +66,39 @@ public class ServicioProductosAlexis {
 
         return listaAuxiliar;
     }
+
+
+
+    public String eliminarCodigoProAlexis(int codigoPro) {
+
+        for (ProductosAlexis producto: lista) {
+            if (producto.getCodigoPro() == codigoPro) {
+                lista.remove(producto);
+                break;
+            }
+        }
+
+        return "PRODUCTO ELIMINADO";
+    }
+
+
+
+    public String actualizarProAlexis (ProductosAlexis producto) {
+
+        for (ProductosAlexis productoI: lista) {
+            if (productoI.getCodigoPro() == producto.getCodigoPro()) {
+                productoI.setCantidadPro(producto.getCantidadPro());
+                productoI.setNombrePro(producto.getNombrePro());
+                productoI.setCategoriaPro(producto.getCategoriaPro());
+                productoI.setPrecioPro(producto.getPrecioPro());
+                productoI.setTotalPro(0.0);
+            }
+        }
+
+        return "PRODUCTO ACTUALIZADO";
+    }
+
+
 
 
 
