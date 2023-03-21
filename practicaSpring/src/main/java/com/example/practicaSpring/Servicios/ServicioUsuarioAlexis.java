@@ -14,13 +14,26 @@ public class ServicioUsuarioAlexis {
         lista.add(new UsuarioAlexis(12, "Pedro", "España", LocalDate.of(2019, 04, 16), "pedro@gmail.com"));
     }
 
-    public ArrayList<UsuarioAlexis> listar() {
+    public ArrayList<UsuarioAlexis> listarUsuarioAlexis() {
         return lista;
     }
 
     public String agregarUsuarioAlexis(UsuarioAlexis usuario) {
         lista.add(usuario);
         return "Registro existoso";
+    }
+
+    public UsuarioAlexis buscarUsuarioAlexis(int idUsuario) {
+        UsuarioAlexis usuarioAuxiliar = null;
+
+        for (UsuarioAlexis usuario: lista) {
+            if (usuario.getIdUsuario() == idUsuario) {
+                usuarioAuxiliar = usuario;
+                break;
+            }
+        }
+
+        return usuarioAuxiliar;
     }
 
 }

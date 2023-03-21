@@ -15,11 +15,15 @@ public class ServicioProductosAlexis {
         lista.add(new ProductosAlexis(5, 56, "Frijol", "Grano", 15800.0, 0));
     }
 
-    public ArrayList<ProductosAlexis> mostrarListaProductos() {
+
+
+    public ArrayList<ProductosAlexis> mostrarListaProductosAlexis() {
         return lista;
     }
 
-    public ArrayList<ProductosAlexis> totalProducto() {
+
+
+    public ArrayList<ProductosAlexis> totalProductoAlexis() {
         for (ProductosAlexis producto: lista) {
             producto.setTotalPro(producto.getCantidadPro() * producto.getPrecioPro());
         }
@@ -27,10 +31,43 @@ public class ServicioProductosAlexis {
         return lista;
     }
 
+
+
     public String agregarProductoAlexis (ProductosAlexis producto) {
         lista.add(producto);
         return "Registro existoso";
     }
+
+
+
+    public ProductosAlexis buscarCodigoProAlexis(int codigoPro) {
+        ProductosAlexis productoAuxiliar = null;
+
+        for (ProductosAlexis producto: lista) {
+            if (producto.getCodigoPro() == codigoPro) {
+                productoAuxiliar = producto;
+                break;
+            }
+        }
+
+        return productoAuxiliar;
+    }
+
+
+
+    public ArrayList<ProductosAlexis> buscarCategoriaProAlexis(String categoriaPro) {
+        ArrayList<ProductosAlexis> listaAuxiliar = new ArrayList<>();
+
+        for (ProductosAlexis producto: lista) {
+            if (producto.getCategoriaPro().equals(categoriaPro)) {
+                listaAuxiliar.add(producto);
+            }
+        }
+
+        return listaAuxiliar;
+    }
+
+
 
 
 

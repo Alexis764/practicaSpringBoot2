@@ -96,4 +96,34 @@ $(document).ready(function(){
 
 
 
+    $('#buscar').on('click', function() {
+        
+        let tabla = document.querySelector('#tablaBuscar')
+        tabla.innerHTML = '<thead><th class="titleTabla">Codigo<th class="titleTabla">Nombre<th class="titleTabla">Pais<th class="titleTabla">Fecha<th class="titleTabla">Correo'
+
+        let codigo = $('#idUsuarioBuscar').val();
+        $.ajax({
+
+            url: "http://localhost:8080/buscarUsuarioA/" + codigo,
+            type: "GET",
+            dataType: "JSON",
+            success: function(respuesta) {
+
+                if (respuesta != null) {
+                    tabla.innerHTML += '<tr><td>' + respuesta.idUsuario + 
+                    '<td>' + respuesta.nombre +
+                    '<td>' + respuesta.pais +
+                    '<td>' + respuesta.fechaNacimiento +
+                    '<td>' + respuesta.correo
+
+                }
+
+            }
+
+        });
+
+    });
+
+
+    
 });

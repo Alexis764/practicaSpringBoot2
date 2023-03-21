@@ -37,6 +37,14 @@ button:hover {
     background-color: aqua;
 }
 
+#divisor {
+    width: 80%;
+    height: 10px;
+    background-color: black;
+    border: 2px solid aqua;
+    min-width: 410PX;
+}
+
 
 
 #links {

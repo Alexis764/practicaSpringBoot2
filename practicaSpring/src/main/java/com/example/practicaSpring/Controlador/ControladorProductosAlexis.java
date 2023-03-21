@@ -15,18 +15,32 @@ public class ControladorProductosAlexis {
 
     @GetMapping("/listarProductosAlexis")
     public ArrayList<ProductosAlexis> listarProductos() {
-        return servicioProductos.mostrarListaProductos();
+        return servicioProductos.mostrarListaProductosAlexis();
     }
 
     @GetMapping("/totalProductoAlexis")
     public ArrayList<ProductosAlexis> listarTotal() {
-        return servicioProductos.totalProducto();
+        return servicioProductos.totalProductoAlexis();
     }
 
     @PostMapping("/agregarProductoA")
     public String agregarProducto(@RequestBody ProductosAlexis producto) {
         return servicioProductos.agregarProductoAlexis(producto);
     }
+
+    @GetMapping("/buscarCodigoProA/{cod}")
+    public ProductosAlexis buscarCodigoPro(@PathVariable("cod") int codigoPro) {
+        return servicioProductos.buscarCodigoProAlexis(codigoPro);
+    }
+
+    @GetMapping("/buscarCategoriaProA/{cat}")
+    public ArrayList<ProductosAlexis> buscarCategoriaPro(@PathVariable("cat") String categoriaPro) {
+        return servicioProductos.buscarCategoriaProAlexis(categoriaPro);
+    }
+
+
+
+
 
 
 

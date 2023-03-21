@@ -16,12 +16,17 @@ public class ControladorUsuarioAlexis {
 
     @GetMapping("/listarUsuarioA")
     public ArrayList<UsuarioAlexis> listarUsuario() {
-        return servicio.listar();
+        return servicio.listarUsuarioAlexis();
     }
 
     @PostMapping("/agregarUsuarioA")
     public String agregarUsuario(@RequestBody UsuarioAlexis usuario) {
         return servicio.agregarUsuarioAlexis(usuario);
+    }
+
+    @GetMapping("/buscarUsuarioA/{cod}")
+    public UsuarioAlexis buscarUsuario(@PathVariable("cod") int idUsuario) {
+        return servicio.buscarUsuarioAlexis(idUsuario);
     }
 
 }
