@@ -37,3 +37,7 @@ button{
     background-color: aliceblue;
     color: black;
 }
+
+button{
+    cursor: pointer;
+}
