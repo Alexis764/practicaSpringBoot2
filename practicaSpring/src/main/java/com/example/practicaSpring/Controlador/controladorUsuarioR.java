@@ -20,7 +20,7 @@ public class controladorUsuarioR {
     }
 
 
-    //Agregar un dado
+    //Agregar un dato
     @PostMapping("/agregarUsuario")
     public String agregar(@RequestBody UsuarioR usuario){
         return servicio.agregarUsuario(usuario);

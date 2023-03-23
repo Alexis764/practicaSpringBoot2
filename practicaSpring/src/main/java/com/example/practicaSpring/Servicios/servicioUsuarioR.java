@@ -20,12 +20,11 @@ public class servicioUsuarioR {
     }
 
     public String agregarUsuario(UsuarioR usu){
-        lista.add((usu));
+        lista.add(usu);
         return "Registro Exitoso";
     }
 
     public UsuarioR buscarUsuario(int codigo){
-
         UsuarioR usu = null;
 
         for (UsuarioR u: lista){

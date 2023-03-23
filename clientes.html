@@ -20,7 +20,7 @@
 
             <div id="cajaNombre">
                 <label>Ingrese el nombre:</label>
-                <input id="nombre" type="text" pattern="[A-Za-z]" minlength="10" placeholder="Digite aqui" >
+                <input id="nombre" type="text" pattern="[A-Za-z]" placeholder="Digite aqui" >
             </div>
 
             <div id="cajaApellido">
@@ -38,8 +38,24 @@
                 <input id="correo" type="email" placeholder="example@gmail.com" >
             </div>
 
-            <input type="submit" value="Enviar">
+            <button type="button" id="enviarC">Enviar</button>
             <button type="button" id="listar">Listar</button>
+            <button type="button" id="modificar">Modificar</button>
+
+            <div id="cajaBuscar">
+                <label>Buscar Cliente por Cedula: </label>
+                <input type="text" placeholder="Coloque aqui" id="numCedula">
+                <button type="button" id="btnbuscar">Buscar</button>
+                <button type="button" id="btnbuscar3">Eliminar</button>
+            </div>
+
+            <div id="cajaBuscar">
+                <label>Buscar Cliente por Nombre: </label>
+                <input type="text" placeholder="Coloque aqui" id="busqNombre">
+                <button type="button" id="btnbuscar2">Buscar</button>
+            </div>
+
+            <div id="busqueda"></div>
 
         </ul>
 
