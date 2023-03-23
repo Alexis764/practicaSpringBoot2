@@ -23,19 +23,36 @@ public class ServicioProductosAlexis {
 
 
 
-    public ArrayList<ProductosAlexis> totalProductoAlexis() {
+    public String totalProductoAlexis() {
         for (ProductosAlexis producto: lista) {
             producto.setTotalPro(producto.getCantidadPro() * producto.getPrecioPro());
         }
 
-        return lista;
+        return "TOTAL CALCULADO\nVUELVA A LISTAR";
     }
 
 
 
     public String agregarProductoAlexis (ProductosAlexis producto) {
-        lista.add(producto);
-        return "PRODUCTO REGISTRADO";
+        String respuesta;
+        boolean encontrado = false;
+
+        for (ProductosAlexis productoIte: lista) {
+            if (productoIte.getCodigoPro() == producto.getCodigoPro()) {
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (!encontrado) {
+            respuesta = "PRODUCTO REGISTRADO CON EXITO";
+            lista.add(producto);
+
+        } else {
+            respuesta = "PRODUCTO YA EXISTENTE\nINGRESE UN CODIGO DIFERENTE";
+        }
+
+        return respuesta;
     }
 
 
@@ -70,32 +87,40 @@ public class ServicioProductosAlexis {
 
 
     public String eliminarCodigoProAlexis(int codigoPro) {
+        String respuesta;
 
-        for (ProductosAlexis producto: lista) {
-            if (producto.getCodigoPro() == codigoPro) {
-                lista.remove(producto);
-                break;
-            }
+        if (buscarCodigoProAlexis(codigoPro) != null) {
+            lista.remove(buscarCodigoProAlexis(codigoPro));
+            respuesta = "PRODUCTO ELIMINADO CON EXITO";
+
+        } else {
+            respuesta = "PRODUCTO NO EXISTENTE";
         }
 
-        return "PRODUCTO ELIMINADO";
+        return respuesta;
     }
 
 
 
     public String actualizarProAlexis (ProductosAlexis producto) {
 
-        for (ProductosAlexis productoI: lista) {
-            if (productoI.getCodigoPro() == producto.getCodigoPro()) {
-                productoI.setCantidadPro(producto.getCantidadPro());
-                productoI.setNombrePro(producto.getNombrePro());
-                productoI.setCategoriaPro(producto.getCategoriaPro());
-                productoI.setPrecioPro(producto.getPrecioPro());
-                productoI.setTotalPro(0.0);
-            }
+        String respuesta;
+        ProductosAlexis productoAuxiliar = buscarCodigoProAlexis(producto.getCodigoPro());
+
+        if (productoAuxiliar != null) {
+            productoAuxiliar.setCantidadPro(producto.getCantidadPro());
+            productoAuxiliar.setNombrePro(producto.getNombrePro());
+            productoAuxiliar.setCategoriaPro(producto.getCategoriaPro());
+            productoAuxiliar.setPrecioPro(producto.getPrecioPro());
+            productoAuxiliar.setTotalPro(0.0);
+
+            respuesta = "PRODUCTO ACTUALIZADO";
+
+        } else {
+            respuesta = "PRODUCTO NO EXISTENTE";
         }
 
-        return "PRODUCTO ACTUALIZADO";
+        return respuesta;
     }
 
 

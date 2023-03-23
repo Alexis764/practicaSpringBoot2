@@ -9,9 +9,9 @@ $(document).ready(function(){
 
         $.ajax({
             
-            url: "http://localhost:8080/listarProductosAlexis",
+            url: "http://localhost:8080/listarProductosA",
             type: "GET",
-            dataType: "JSON",
+            datatype: "JSON",
             success: function(respuesta) {
                 console.log(respuesta);
 
@@ -36,28 +36,13 @@ $(document).ready(function(){
 
     $('#calcularTotalPro').on('click', function() {
 
-        let tabla = document.querySelector('#tablaPro')
-        tabla.innerHTML = '<thead><th class="titleTabla" colspan="6">PRODUCTOS<thead><th class="titleTabla">Codigo<th class="titleTabla">Cantidad<th class="titleTabla">Nombre<th class="titleTabla">Categoria<th class="titleTabla">Precio<th class="titleTabla">Total'
-
         $.ajax({
             
-            url: "http://localhost:8080/totalProductoAlexis",
+            url: "http://localhost:8080/totalProductoA",
             type: "GET",
-            dataType: "JSON",
+            datatype: "TEXT",
             success: function(respuesta) {
-                console.log(respuesta);
-
-                for (i=0; i <= respuesta.length; i++) {
-
-                    tabla.innerHTML += '<tr><td>' + respuesta[i].codigoPro + 
-                    '<td>' + respuesta[i].cantidadPro +
-                    '<td>' + respuesta[i].nombrePro +
-                    '<td>' + respuesta[i].categoriaPro +
-                    '<td>' + respuesta[i].precioPro +
-                    '<td>' + respuesta[i].totalPro
-
-                }
-    
+                alert(respuesta)
             }
 
         });
@@ -85,7 +70,7 @@ $(document).ready(function(){
             url: "http://localhost:8080/agregarProductoA",
             data: datosEnvio,
             contentType: "application/JSON",
-            dataType: "TEXT",
+            datatype: "TEXT",
             success: function(respuesta) {
                 alert(respuesta)
             }
@@ -97,24 +82,30 @@ $(document).ready(function(){
 
 
     $('#buscarCodigoPro').on('click', function() {
-        
-        let tabla = document.querySelector('#tablaBuscarCodigoPro')
-        tabla.innerHTML = '<thead><th class="titleTabla" colspan="6">PRODUCTOS<thead><th class="titleTabla">Codigo<th class="titleTabla">Cantidad<th class="titleTabla">Nombre<th class="titleTabla">Categoria<th class="titleTabla">Precio<th class="titleTabla">Total'
 
         let codigoPro = $('#codigoProHtmlBuscar').val();
         $.ajax({
 
             url: "http://localhost:8080/buscarCodigoProA/" + codigoPro,
             type: "GET",
-            dataType: "JSON",
+            datatype: "JSON",
             success: function(respuesta) {
 
-                tabla.innerHTML += '<tr><td>' + respuesta.codigoPro + 
+                if (respuesta) {
+
+                    let tabla = document.querySelector('#tablaBuscarCodigoPro')
+                    tabla.innerHTML = '<thead><th class="titleTabla" colspan="6">PRODUCTOS<thead><th class="titleTabla">Codigo<th class="titleTabla">Cantidad<th class="titleTabla">Nombre<th class="titleTabla">Categoria<th class="titleTabla">Precio<th class="titleTabla">Total'
+
+                    tabla.innerHTML += '<tr><td>' + respuesta.codigoPro + 
                     '<td>' + respuesta.cantidadPro +
                     '<td>' + respuesta.nombrePro +
                     '<td>' + respuesta.categoriaPro +
                     '<td>' + respuesta.precioPro +
                     '<td>' + respuesta.totalPro
+
+                } else {
+                    alert("PRODUCTO NO EXISTENTE")
+                }
 
             }
 
@@ -134,7 +125,7 @@ $(document).ready(function(){
 
             url: "http://localhost:8080/buscarCategoriaProA/" + categoriaPro,
             type: "GET",
-            dataType: "JSON",
+            datatype: "JSON",
             success: function(respuesta) {
 
                 for (i=0; i <= respuesta.length; i++) {
@@ -162,8 +153,8 @@ $(document).ready(function(){
         $.ajax({
 
             url: "http://localhost:8080/eliminarCodigoProA/" + codigoPro,
-            type: "GET",
-            dataType: "TEXT",
+            type: "DELETE",
+            datatype: "TEXT",
             success: function(respuesta) {
                 alert(respuesta)
             }
@@ -189,11 +180,11 @@ $(document).ready(function(){
         
         $.ajax({
         
-            type: "POST", 
+            type: "PUT", 
             url: "http://localhost:8080/actualizarProductoA",
             data: datosEnvio,
             contentType: "application/JSON",
-            dataType: "TEXT",
+            datatype: "TEXT",
             success: function(respuesta) {
                 alert(respuesta)
             }

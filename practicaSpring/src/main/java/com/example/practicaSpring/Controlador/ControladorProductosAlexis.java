@@ -13,13 +13,13 @@ public class ControladorProductosAlexis {
 
     ServicioProductosAlexis servicioProductos = new ServicioProductosAlexis();
 
-    @GetMapping("/listarProductosAlexis")
+    @GetMapping("/listarProductosA")
     public ArrayList<ProductosAlexis> listarProductos() {
         return servicioProductos.mostrarListaProductosAlexis();
     }
 
-    @GetMapping("/totalProductoAlexis")
-    public ArrayList<ProductosAlexis> listarTotal() {
+    @GetMapping("/totalProductoA")
+    public String listarTotal() {
         return servicioProductos.totalProductoAlexis();
     }
 
@@ -38,12 +38,12 @@ public class ControladorProductosAlexis {
         return servicioProductos.buscarCategoriaProAlexis(categoriaPro);
     }
 
-    @GetMapping("/eliminarCodigoProA/{cod}")
+    @DeleteMapping("/eliminarCodigoProA/{cod}")
     public String eliminarCodigoPro(@PathVariable("cod") int codigoPro) {
         return servicioProductos.eliminarCodigoProAlexis(codigoPro);
     }
 
-    @PostMapping("/actualizarProductoA")
+    @PutMapping("/actualizarProductoA")
     public String actualizarProducto(@RequestBody ProductosAlexis producto) {
         return servicioProductos.actualizarProAlexis(producto);
     }
